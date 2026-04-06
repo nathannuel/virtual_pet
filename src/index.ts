@@ -1,8 +1,24 @@
+import * as readline from "readline";
 import { Dog } from "./dog";
-import { Cat } from "./cat"
+import { Cat } from "./cat";
 
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-const doggy = new Dog("doggy", 100, 100)
-console.log(doggy.name)
-const kitty = new Cat("kitty", 100, 100)
-console.log(kitty.name)
+rl.question("Hewan peliharaan apa yang ingin kamu adopsi?\n1: Cat\n2: Dog\nPilihan: ", (jawaban) => {
+    const pilihan = jawaban.trim();
+
+    if (pilihan === "1") {
+        const kitty = new Cat("Kitty", 100, 100);
+        kitty.suara();
+    } else if (pilihan === "2") {
+        const doggy = new Dog("Doggy", 100, 100);
+        doggy.suara();
+    } else {
+        console.log("Pilihan tidak valid. Masukkan 1 untuk Cat atau 2 untuk Dog.");
+    }
+
+    rl.close();
+});

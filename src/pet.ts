@@ -12,4 +12,7 @@ export class pet {
         this.kesenangan += porsi / 2;
         console.log(`${this.name} makan ${porsi} porsi, kesehatan dan kesenangan bertambah menjadi ${this.health} dan ${this.kesenangan}`);
     }
+    suara(){
+        console.log(`${this.name} bersuara`);
+    }
 }
